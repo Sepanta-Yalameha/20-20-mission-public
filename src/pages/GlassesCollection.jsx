@@ -46,8 +46,8 @@ const GlassesCollection = () => {
       <section className="bg-gradient-to-r from-primary to-accent text-white py-20">
         <div className="section-container text-center">
           <h1 className="text-white mb-4">Glasses Collection Process</h1>
-          <p className="text-xl text-gray-100 max-w-3xl mx-auto">
-            From donation to delivery, every step is carefully managed to ensure quality and impact
+          <p className="textFrom donation to-xl text-gray-100 max-w-3xl mx-auto">
+             delivery, every step is carefully managed to ensure quality and impact
           </p>
         </div>
       </section>

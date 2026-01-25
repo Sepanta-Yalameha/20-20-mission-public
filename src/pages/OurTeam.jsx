@@ -1,7 +1,9 @@
 import { useState } from 'react';
 
+
 const OurTeam = () => {
   const [filter, setFilter] = useState('founders');
+
 
   const teamMembers = {
     founders: [
@@ -80,11 +82,13 @@ const OurTeam = () => {
     ]
   };
 
+
   const filterButtons = [
     { key: 'founders', label: 'Our Founders' },
     { key: 'board', label: 'Board of Directors' },
     { key: 'coordinators', label: 'Coordinators' }
   ];
+
 
   return (
     <div>
@@ -97,6 +101,7 @@ const OurTeam = () => {
           </p>
         </div>
       </section>
+
 
       {/* Filter Buttons */}
       <section className="section-container">
@@ -115,6 +120,7 @@ const OurTeam = () => {
             </button>
           ))}
         </div>
+
 
         {/* Team Members Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -138,6 +144,7 @@ const OurTeam = () => {
                 </div>
               </div>
 
+
               {/* Member Info */}
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
@@ -151,6 +158,7 @@ const OurTeam = () => {
                   </svg>
                   {member.email}
                 </a>
+
 
                 {/* Social Links */}
                 {(member.linkedin || member.instagram) && (
@@ -187,6 +195,7 @@ const OurTeam = () => {
         </div>
       </section>
 
+
       {/* Join Us Section */}
       <section className="bg-light py-16">
         <div className="section-container text-center">
@@ -202,5 +211,6 @@ const OurTeam = () => {
     </div>
   );
 };
+
 
 export default OurTeam;

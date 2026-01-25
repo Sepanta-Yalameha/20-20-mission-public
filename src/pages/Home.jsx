@@ -8,7 +8,7 @@ const Home = () => {
         <div className="section-container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 animate-fade-in">
-              Clear Vision for Everyone
+              Clear Vision for Everyon
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-100">
               Bringing 20/20 vision to underserved communities worldwide through accessible eye care and eyewear donations

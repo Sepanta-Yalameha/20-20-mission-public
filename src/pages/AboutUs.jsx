@@ -1,121 +1,146 @@
+import { useState } from 'react';
+
+
+const teamMembers = [
+  { name: "Kobe Li", role: "Executive Director", email: "kobeli@2020mission.ca", bio: "Founder and Executive Director of 20/20 Mission.", category: "Founders" },
+  { name: "Elva Ly", role: "Board Member", email: "elvaly@2020mission.ca", bio: "Co-founder and Board Member.", category: "Founders" },
+  { name: "Jason Qin", role: "Board Member", email: "jasonqin@2020mission.ca", bio: "Co-founder and Board Member.", category: "Founders" },
+  { name: "Elva Ly", role: "Board Chair", email: "elvaly@2020mission.ca", bio: "Chair of the Board of Directors.", category: "Board" },
+  { name: "Jason Qin", role: "Board Member", email: "jasonqin@2020mission.ca", bio: "Board Member of 20/20 Mission.", category: "Board" },
+  { name: "Kareem Sadek", role: "Board Member", email: "kareem.sadek@ucalgary.ca", bio: "Board Member of 20/20 Mission.", category: "Board" },
+  { name: "Joshua Seto", role: "Board Member", email: "N/A", bio: "Board Member of 20/20 Mission.", category: "Board" },
+  { name: "Dr. Christian Anderson", role: "Board Member", email: "N/A", bio: "Board Member of 20/20 Mission.", category: "Board" },
+  { name: "Jahau Yang", role: "Eyeglasses Coordinator", email: "N/A", bio: "Manages glasses collection and distribution.", category: "Coordinators" },
+  { name: "Esha Pattni", role: "Rural and Indigenous Outreach Coordinator", email: "N/A", bio: "Leads rural and Indigenous outreach programs.", category: "Coordinators" },
+  { name: "Sepanta Yalameha", role: "Website & Database Coordinator", email: "N/A", bio: "Manages website and database operations.", category: "Coordinators" },
+];
+
+
 const AboutUs = () => {
+  const [selectedCategory, setSelectedCategory] = useState("Founders");
+  const filteredMembers = teamMembers.filter(member => member.category === selectedCategory);
+
+
   return (
-    <div>
+    <div className="font-sans text-gray-800">
+
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary to-accent text-white py-20">
-        <div className="section-container text-center">
-          <h1 className="text-white mb-4">About Us</h1>
-          <p className="text-xl text-gray-100 max-w-3xl mx-auto">
-            20/20 Mission is a BC registered non-profit organization
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
+          <p className="text-xl md:text-2xl text-gray-100">
+            20/20 Mission is a BC registered non-profit organization dedicated to providing clear vision for underserved communities.
           </p>
         </div>
       </section>
 
+
       {/* Vision Section */}
-      <section className="section-container">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-16">
-            <h1 className="text-primary mb-6 text-center">Vision</h1>
-            <p className="text-xl text-gray-700 leading-relaxed text-center">
-              A world where every individual in underserved communities has clear vision and equitable access to necessary eye care and optical correction.
-            </p>
-          </div>
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h2 className="text-3xl text-primary font-semibold mb-6">Our Vision</h2>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            A world where every individual in underserved communities has clear vision and equitable access to necessary eye care and optical correction.
+          </p>
+        </div>
+      </section>
 
-          {/* Purpose Section */}
-          <div>
-            <h1 className="text-primary mb-8 text-center">Purpose</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-light p-8 rounded-lg">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mr-4">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-primary mb-2">Collect & Distribute</h3>
-                    <p className="text-gray-600">
-                      To collect, refurbish, and distribute eyeglasses to individuals and communities in need.
-                    </p>
-                  </div>
-                </div>
-              </div>
 
-              <div className="bg-light p-8 rounded-lg">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mr-4">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-primary mb-2">Educate & Advocate</h3>
-                    <p className="text-gray-600">
-                      To advance education and awareness of vision care and global health challenges, inequities, and policies.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-light p-8 rounded-lg">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mr-4">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-primary mb-2">Support Sustainability</h3>
-                    <p className="text-gray-600">
-                      To support sustainability by reusing eyewear and reducing waste.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-light p-8 rounded-lg">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mr-4">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-primary mb-2">Empower Youth</h3>
-                    <p className="text-gray-600">
-                      To empower youth to take humanitarian action through leadership, volunteerism, and experiential learning opportunities.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+      {/* Purpose Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl text-primary font-semibold mb-10 text-center">Our Purpose</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <PurposeCard
+              title="Collect & Distribute"
+              text="To collect, refurbish, and distribute eyeglasses to individuals and communities in need."
+            />
+            <PurposeCard
+              title="Educate & Advocate"
+              text="To advance education and awareness of vision care and global health challenges, inequities, and policies."
+            />
+            <PurposeCard
+              title="Support Sustainability"
+              text="To support sustainability by reusing eyewear and reducing waste."
+            />
+            <PurposeCard
+              title="Empower Youth"
+              text="To empower youth to take humanitarian action through leadership, volunteerism, and experiential learning opportunities."
+            />
           </div>
         </div>
       </section>
+
+
+      {/* Our Team Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-3xl text-primary font-semibold mb-8">Our Team</h2>
+
+
+          {/* Category Dropdown */}
+          <div className="mb-8">
+            <select
+              className="border border-gray-300 rounded px-4 py-2"
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+            >
+              <option value="Founders">Founders</option>
+              <option value="Board">Board of Directors</option>
+              <option value="Coordinators">Coordinators</option>
+            </select>
+          </div>
+
+
+          {/* Team Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {filteredMembers.map((member, idx) => (
+              <div key={idx} className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition relative group cursor-pointer">
+                <h3 className="text-xl font-semibold text-primary mb-1">{member.name}</h3>
+                <p className="text-gray-700 mb-1">{member.role}</p>
+                <p className="text-gray-500 text-sm">{member.email}</p>
+
+
+                {/* Hover bio */}
+                <div className="absolute inset-0 bg-white bg-opacity-95 opacity-0 group-hover:opacity-100 flex items-center justify-center p-4 rounded-lg transition-opacity text-center">
+                  <p className="text-gray-800">{member.bio}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* Call to Action */}
       <section className="bg-primary text-white py-16">
-        <div className="section-container text-center">
-          <h2 className="text-white mb-4">Join Us in Our Mission</h2>
-          <p className="text-xl mb-8 text-gray-100 max-w-2xl mx-auto">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h2 className="text-3xl font-semibold mb-4">Join Us in Our Mission</h2>
+          <p className="text-lg md:text-xl mb-8 text-gray-100">
             Together, we can make a lasting impact on communities worldwide by providing access to clear vision.
           </p>
-          <a href="/get-involved" className="btn-primary bg-white text-primary hover:bg-gray-100">
+          <a href="/get-involved" className="btn-primary bg-white text-primary hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold">
             Get Involved Today
           </a>
         </div>
       </section>
+
+
     </div>
   );
 };
 
+
+// Purpose Card Component
+const PurposeCard = ({ title, text }) => (
+  <div className="bg-white p-8 rounded-lg shadow hover:shadow-lg transition">
+    <h3 className="text-xl font-semibold text-primary mb-2">{title}</h3>
+    <p className="text-gray-700">{text}</p>
+  </div>
+);
+
+
 export default AboutUs;
+
+
