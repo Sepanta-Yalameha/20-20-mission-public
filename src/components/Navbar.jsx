@@ -41,7 +41,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Programs & Initiatives Dropdown */}
+            {/* Our Programs Dropdown */}
             <div className="relative group">
               <button className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium flex items-center">
                 Programs & Initiatives
@@ -56,16 +56,25 @@ const Navbar = () => {
                 <Link to="/eyeglasses-trips" className="block px-4 py-3 text-gray-700 hover:bg-light hover:text-primary transition-colors">
                   Eyeglasses Trips with Rayjon
                 </Link>
+                <Link to="/perspective-project" className="block px-4 py-3 text-gray-700 hover:bg-light hover:text-primary transition-colors">
+                  The Perspective Project
+                </Link>
+                <a href="https://www.futuresinfocus.ca/" target="_blank" rel="noopener noreferrer" className="block px-4 py-3 text-gray-700 hover:bg-light hover:text-primary transition-colors">
+                  Futures in Focus
+                </a>
               </div>
             </div>
 
             <Link to="/get-involved" className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">
               Get Involved
             </Link>
+            <Link to="/gallery" className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">
+              Gallery
+            </Link>
             <Link to="/contact" className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">
               Contact Us
             </Link>
-            <a href="#donate" className="btn-primary">
+            <a href="https://buy.stripe.com/bJe7sF5CT1uX8xL9QHeZ201" target="_blank" rel="noopener noreferrer" className="btn-primary">
               Donate
             </a>
           </div>
@@ -134,8 +143,14 @@ const Navbar = () => {
                     Glasses Collection Process
                   </Link>
                   <Link to="/eyeglasses-trips" className="block px-3 py-2 text-gray-600 hover:bg-light hover:text-primary rounded-md">
-                    Eyeglasses Trips with Rayjon
+                    Eyeglasses Trips
                   </Link>
+                  <Link to="/perspective-project" className="block px-3 py-2 text-gray-600 hover:bg-light hover:text-primary rounded-md">
+                    The Perspective Project
+                  </Link>
+                  <a href="https://www.futuresinfocus.ca/" target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-gray-600 hover:bg-light hover:text-primary rounded-md">
+                    Futures in Focus
+                  </a>
                 </div>
               )}
             </div>
@@ -143,10 +158,13 @@ const Navbar = () => {
             <Link to="/get-involved" className="block px-3 py-2 text-gray-700 hover:bg-light hover:text-primary rounded-md">
               Get Involved
             </Link>
+            <Link to="/gallery" className="block px-3 py-2 text-gray-700 hover:bg-light hover:text-primary rounded-md">
+              Gallery
+            </Link>
             <Link to="/contact" className="block px-3 py-2 text-gray-700 hover:bg-light hover:text-primary rounded-md">
               Contact Us
             </Link>
-            <a href="#donate" className="block mx-3 my-2 btn-primary text-center">
+            <a href="https://buy.stripe.com/bJe7sF5CT1uX8xL9QHeZ201" target="_blank" rel="noopener noreferrer" className="block mx-3 my-2 btn-primary text-center">
               Donate
             </a>
           </div>

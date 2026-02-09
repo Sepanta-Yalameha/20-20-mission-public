@@ -62,31 +62,28 @@ const GetInvolved = () => {
       {/* Leadership Positions */}
       <section className="section-container">
         <div className="text-center mb-12">
-          <h1 className="text-primary mb-4">Apply for a Leadership Position</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Take on a leadership role and help shape the future of 20/20 Mission
+          <h1 className="text-primary mb-4">Leadership Positions</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+            We are not hiring for specific coordinator positions at the moment.
+          </p>
+          <p className="text-lg text-gray-700">
+            For partnerships and collaboration, please contact <a href="mailto:kobeli@2020mission.ca" className="text-primary font-semibold hover:underline">kobeli@2020mission.ca</a>.
           </p>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {positions.map((position, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border-l-4 border-primary"
-            >
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{position}</h3>
-              <p className="text-gray-600 mb-4">Help drive our mission forward in this key role</p>
-              <button className="text-primary font-semibold hover:text-secondary transition-colors">
-                Apply Now →
-              </button>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center">
-          <button className="btn-primary">
-            View All Leadership Opportunities
-          </button>
+      {/* School Chapter Section */}
+      <section className="section-container">
+        <div className="bg-gradient-to-r from-primary to-accent text-white p-12 rounded-2xl">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-white mb-6">Start a School-Based Chapter</h2>
+            <p className="text-xl text-gray-100 mb-8">
+              Empower students in your school to make a difference. Start a 20/20 Mission chapter and lead local initiatives to collect glasses, raise awareness, and support our mission.
+            </p>
+            <a href="mailto:eyeglasses@2020mission.ca?subject=Interest%20in%20Starting%20a%20Chapter" className="inline-block btn-primary bg-white text-primary hover:bg-gray-100">
+              Contact Us to Start a Chapter
+            </a>
+          </div>
         </div>
       </section>
 
@@ -122,24 +119,14 @@ const GetInvolved = () => {
           </div>
 
           <div className="text-center">
-            <button className="btn-primary">
+            <a 
+              href="https://forms.gle/vXRQDZ3gTpGTg2Tv6" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block btn-primary"
+            >
               Apply to Volunteer
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* School Chapter Section */}
-      <section className="section-container">
-        <div className="bg-gradient-to-r from-primary to-accent text-white p-12 rounded-2xl">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-white mb-6">Start a School-Based Chapter</h2>
-            <p className="text-xl text-gray-100 mb-8">
-              Empower students in your school to make a difference. Start a 20/20 Mission chapter and lead local initiatives to collect glasses, raise awareness, and support our mission.
-            </p>
-            <button className="btn-primary bg-white text-primary hover:bg-gray-100">
-              Learn How to Start a Chapter
-            </button>
+            </a>
           </div>
         </div>
       </section>

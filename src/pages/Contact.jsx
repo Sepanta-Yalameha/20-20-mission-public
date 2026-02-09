@@ -3,28 +3,51 @@ import { useState } from 'react';
 const Contact = () => {
   const [newsletterForm, setNewsletterForm] = useState({ name: '', email: '' });
   const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
-  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
   const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactError, setContactError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setContactError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactForm),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setContactSubmitted(true);
+        setContactForm({ name: '', email: '', message: '' });
+        setTimeout(() => {
+          setContactSubmitted(false);
+        }, 5000);
+      } else {
+        setContactError(data.message || 'Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setContactError('Failed to send message. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
-    // In production, this would send to a backend
     console.log('Newsletter signup:', newsletterForm);
     setNewsletterSubmitted(true);
     setTimeout(() => {
       setNewsletterSubmitted(false);
       setNewsletterForm({ name: '', email: '' });
-    }, 3000);
-  };
-
-  const handleContactSubmit = (e) => {
-    e.preventDefault();
-    // In production, this would send to a backend
-    console.log('Contact form:', contactForm);
-    setContactSubmitted(true);
-    setTimeout(() => {
-      setContactSubmitted(false);
-      setContactForm({ name: '', email: '', message: '' });
     }, 3000);
   };
 
@@ -50,8 +73,8 @@ const Contact = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Email</h3>
-            <a href="mailto:kobeli@2020mission.ca" className="text-primary hover:text-secondary transition-colors">
-              kobeli@2020mission.ca
+            <a href="mailto:info@2020mission.ca" className="text-primary hover:text-secondary transition-colors">
+              info@2020mission.ca
             </a>
           </div>
 
@@ -88,9 +111,9 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
+       
       {/* Newsletter Signup */}
-      <section className="bg-light py-16">
+      {/* <section className="bg-light py-16">
         <div className="section-container">
           <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
             <div className="text-center mb-8">
@@ -141,10 +164,11 @@ const Contact = () => {
             </form>
           </div>
         </div>
-      </section>
+      </section>  */}
+      
 
       {/* Contact Form */}
-      <section className="section-container">
+      <section id="message" className="section-container">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8">
             <h1 className="text-primary mb-4">Send Us a Message</h1>
@@ -199,12 +223,18 @@ const Contact = () => {
               ></textarea>
             </div>
 
+            {contactError && (
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                {contactError}
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full btn-primary"
-              disabled={contactSubmitted}
+              className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={contactSubmitted || isSubmitting}
             >
-              {contactSubmitted ? 'Message sent! We\'ll be in touch soon ✓' : 'Send Message'}
+              {isSubmitting ? 'Sending...' : contactSubmitted ? 'Message sent! We\'ll be in touch soon ✓' : 'Send Message'}
             </button>
           </form>
         </div>
