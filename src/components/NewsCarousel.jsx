@@ -6,27 +6,41 @@ const NewsCarousel = () => {
   const articles = [
     {
       id: 1,
-      title: "Terry Fox Humanitarian Award Recipient",
-      summary: "Kobe Li earns prestigious award for his work with 20/20 Mission, helping thousands see clearly.",
-      image: "/Kobe_Li-1.jpg",
-      link: "https://www.eng.mcmaster.ca/news/a-vision-for-change-ibiomed-student-kobe-li-earns-terry-fox-humanitarian-award/"
+      title: "Dr. Christian Anderson on Health Administration",
+      summary: "U of T's Institute of Health Policy features Dr. Christian Anderson, 20/20 Mission board member, on health administration leadership.",
+      image: "/Dominican Republic 2025/Dominican Republic 2025-35.jpg",
+      link: "https://ihpme.utoronto.ca/2026/02/christian-anderson-health-administration/"
     },
     {
       id: 2,
-      title: "Launching an Eyeglasses Organization",
-      summary: "Read about Kobe Li's journey of launching 20/20 Mission through the Duke of Edinburgh's International Award.",
-      image: "/Collection Process/IMG_1184.jpg",
-      link: "https://www.dukeofed.org/articles/launching-an-eyeglasses-organization/"
+      title: "Kobe Li Receives Starfish Fellowship",
+      summary: "The Hamilton Spectator covers Kobe Li's Starfish Fellowship recognition for his community impact through 20/20 Mission.",
+      image: "/Kobe_Li-1.jpg",
+      link: "https://www.thespec.com/news/hamilton-region/kobe-li-starfish-fellowship/article_18000a75-6839-56aa-be57-498766fbcb77.html"
     },
     {
       id: 3,
+      title: "Terry Fox Humanitarian Award Recipient",
+      summary: "Kobe Li earns prestigious award for his work with 20/20 Mission, helping thousands see clearly.",
+      image: "/Collection Process/IMG_1184.jpg",
+      link: "https://www.eng.mcmaster.ca/news/a-vision-for-change-ibiomed-student-kobe-li-earns-terry-fox-humanitarian-award/"
+    },
+    {
+      id: 4,
+      title: "Launching an Eyeglasses Organization",
+      summary: "Read about Kobe Li's journey of launching 20/20 Mission through the Duke of Edinburgh's International Award.",
+      image: "/Collection Process/IMG_1219.jpg",
+      link: "https://www.dukeofed.org/articles/launching-an-eyeglasses-organization/"
+    },
+    {
+      id: 5,
       title: "Duke of Ed Photo Memories",
       summary: "Golden Award memories: Documenting the transformative impact of the Guatemala mission trip.",
       image: "/Guatemala/Guatemala April 2024 Day 6-71.jpg", 
       link: "https://intaward.org/photocompmemories/kobe-l/"
     },
     {
-      id: 4,
+      id: 6,
       title: "A Vision For Change",
       summary: "McMaster News highlights the global impact of the student-led 20/20 Mission.",
       image: "/Dominican Republic 2025/Dominican Republic 2025-14.jpg",
@@ -37,7 +51,7 @@ const NewsCarousel = () => {
   const scroll = (direction) => {
     if (scrollContainer.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainer.current;
-      const scrollAmount = 350;
+      const scrollAmount = 340;
 
       if (direction === 'left') {
         if (scrollLeft <= 10) {

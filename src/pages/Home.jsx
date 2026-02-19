@@ -136,9 +136,9 @@ const Home = () => {
             <Link to="/get-involved" className="btn-secondary border-white text-black hover:bg-white hover:text-primary">
               Volunteer With Us
             </Link>
-            <a href="#donate" className="btn-primary bg-white text-primary hover:bg-gray-100">
-              Donate Now
-            </a>
+            <Link to="/glasses-collection" className="btn-primary bg-white text-primary hover:bg-gray-100">
+              Donate Glasses
+            </Link>
           </div>
         </div>
       </section>

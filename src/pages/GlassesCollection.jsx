@@ -122,16 +122,30 @@ const GlassesCollection = () => {
         </div>
       </section>
 
-      {/* Donation Locations CTA */}
+      {/* Donation Locations Map */}
       <section className="bg-light py-16">
-        <div className="section-container text-center">
-          <h2 className="text-primary mb-6">Find a Donation Location</h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Want to donate your old glasses? Find a convenient drop-off location near you.
+        <div className="section-container">
+          <div className="text-center mb-8">
+            <h2 className="text-primary mb-6">Find a Donation Location</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Want to donate your old glasses? Find a convenient drop-off location near you using the map below.
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/d/embed?mid=12PylVLPwe9k_i8yqghQLLlyTDBaGRg4&ehbc=2E312F"
+              width="100%"
+              height="500"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="20/20 Mission Glasses Collection Locations"
+            ></iframe>
+          </div>
+          <p className="text-center text-gray-500 mt-4 text-sm">
+            Click on any marker to see the location details and hours
           </p>
-          <button className="btn-primary">
-            View Donation Locations
-          </button>
         </div>
       </section>
 

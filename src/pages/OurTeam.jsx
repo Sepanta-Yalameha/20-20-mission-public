@@ -44,19 +44,16 @@ const OurTeam = () => {
       {
         name: 'Kareem Sadek',
         role: 'Board Member',
-        email: 'kareem.sadek@ucalgary.ca',
         bio: 'Bringing valuable insights in healthcare policy and community engagement.'
       },
       {
         name: 'Joshua Seto',
         role: 'Board Member',
-        email: 'joshua.seto@example.ca',
         bio: 'Supporting mission initiatives through strategic planning and partnerships.'
       },
       {
         name: 'Dr. Christian Anderson',
         role: 'Board Member',
-        email: 'dr.anderson@example.ca',
         bio: 'Providing medical expertise and guidance in vision care and eye health.'
       }
     ],
@@ -149,15 +146,17 @@ const OurTeam = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
                 <p className="text-primary font-semibold mb-3">{member.role}</p>
-                <a
-                  href={`mailto:${member.email}`}
-                  className="text-gray-600 hover:text-primary transition-colors flex items-center mb-4"
-                >
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  {member.email}
-                </a>
+                {member.email && (
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="text-gray-600 hover:text-primary transition-colors flex items-center mb-4"
+                  >
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    {member.email}
+                  </a>
+                )}
 
 
                 {/* Social Links */}

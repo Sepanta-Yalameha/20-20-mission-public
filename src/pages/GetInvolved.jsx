@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const GetInvolved = () => {
   const positions = [
     'Grantwriting Coordinator',
@@ -80,9 +82,9 @@ const GetInvolved = () => {
             <p className="text-xl text-gray-100 mb-8">
               Empower students in your school to make a difference. Start a 20/20 Mission chapter and lead local initiatives to collect glasses, raise awareness, and support our mission.
             </p>
-            <a href="mailto:eyeglasses@2020mission.ca?subject=Interest%20in%20Starting%20a%20Chapter" className="inline-block btn-primary bg-white text-primary hover:bg-gray-100">
+            <Link to="/contact" className="inline-block btn-primary bg-white text-primary hover:bg-gray-100">
               Contact Us to Start a Chapter
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -131,19 +133,30 @@ const GetInvolved = () => {
         </div>
       </section>
 
-      {/* Donation Section */}
+      {/* Donate Glasses Section */}
       <section className="section-container">
-        <div className="bg-white p-12 rounded-2xl shadow-xl text-center">
-          <h1 className="text-primary mb-6">Make a Donation</h1>
-          <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
-            Your financial support helps us collect, process, and distribute eyeglasses to those in need.
+        <div className="bg-white p-12 rounded-2xl shadow-xl">
+          <div className="text-center mb-8">
+            <h1 className="text-primary mb-6">Donate Your Glasses</h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Have old glasses you no longer need? Drop them off at one of our collection locations. Your donated eyewear will help someone in need see clearly.
+            </p>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/d/embed?mid=12PylVLPwe9k_i8yqghQLLlyTDBaGRg4&ehbc=2E312F"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="20/20 Mission Glasses Collection Locations"
+            ></iframe>
+          </div>
+          <p className="text-center text-gray-500 mt-4 text-sm">
+            Click on any marker to see location details and hours
           </p>
-          <p className="text-gray-500 mb-8 italic">
-            Please note: As we are a newly registered non-profit organization, we are currently unable to provide tax receipts for donations. However, every contribution makes a meaningful impact on our mission.
-          </p>
-          <button className="btn-primary text-lg px-12 py-4">
-            Donate Now
-          </button>
         </div>
       </section>
 
