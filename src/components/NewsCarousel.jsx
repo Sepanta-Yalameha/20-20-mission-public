@@ -8,7 +8,7 @@ const NewsCarousel = () => {
       id: 1,
       title: "Dr. Christian Anderson on Health Administration",
       summary: "U of T's Institute of Health Policy features Dr. Christian Anderson, 20/20 Mission board member, on health administration leadership.",
-      image: "/Dominican Republic 2025/Dominican Republic 2025-35.jpg",
+      image: "/ImageForChristianAnderson.jpeg",
       link: "https://ihpme.utoronto.ca/2026/02/christian-anderson-health-administration/"
     },
     {
